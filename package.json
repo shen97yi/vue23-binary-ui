@@ -5,15 +5,22 @@
   "files": [
     "dist"
   ],
+  "main": "./dist/vue2/ul-question-test-ui.cjs.js",
+  "module": "./dist/vue2/ul-question-test-ui.es.js",
   "exports": {
     ".": {
-      "import": "./dist/vue3/ul-question-test-ui.es.js",
-      "require": "./dist/vue3/ul-question-test-ui.umd.js"
+      "import": "./dist/vue2/ul-question-test-ui.es.js",
+      "require": "./dist/vue2/ul-question-test-ui.cjs.js"
     },
     "./vue2": {
       "import": "./dist/vue2/ul-question-test-ui.es.js",
       "require": "./dist/vue2/ul-question-test-ui.cjs.js"
-    }
+    },
+    "./vue3": {
+      "import": "./dist/vue3/ul-question-test-ui.es.js",
+      "require": "./dist/vue3/ul-question-test-ui.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "peerDependencies": {
     "vue": ">=2.0.0 || >=3.0.0",
