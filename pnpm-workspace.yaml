@@ -1,5 +1,5 @@
 packages:
-  # - 'packages/build-v3*'
-  # - 'examples/vue3-demo*'
-  - 'examples/vue2-demo*'
-  - 'packages/build-v2*'
+  - 'packages/build-v3*'
+  - 'examples/vue3-demo*'
+  # - 'examples/vue2-demo*'
+  # - 'packages/build-v2*'
