@@ -20,17 +20,19 @@
       "import": "./dist/vue3/ul-question-test-ui.es.js",
       "require": "./dist/vue3/ul-question-test-ui.umd.js"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./vue2-style": "./dist/vue2/build-v2.css",
+    "./vue3-style": "./dist/vue3/build-v3.css"
   },
   "peerDependencies": {
     "vue": ">=2.0.0 || >=3.0.0",
     "@opentiny/vue": ">=2.25.0 || >=3.25.0"
   },
   "dependencies": {
-    "vue-demi": "^0.14.10"
-  },
-  "devDependencies": {
-    "vite": "^6.0.1"
+    "vue-demi": "^0.14.10",
+    "js-cookie": "^3.0.5",
+    "mediaelement": "^4.2.16",
+    "ulearning-obs": "0.0.54",
+    "sass": "^1.94.0"
   },
   "scripts": {
     "build:v2": "pnpm --filter @my-ui/build-v2 build",

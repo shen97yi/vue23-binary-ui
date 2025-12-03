@@ -3,6 +3,11 @@ import vue2 from '@vitejs/plugin-vue2'
 import { resolve } from 'path'
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, '../lib'), // 确保指向正确的源码目录
+    }
+  },
   plugins: [vue2()],
   build: {
     outDir: '../../dist/vue2',
@@ -26,5 +31,16 @@ export default defineConfig({
       } 
     }
     }
-  }
+  },
+  // css: {
+  //   preprocessorOptions: {
+  //     scss: {
+  //       // 全局注入 SCSS 变量/混入（分号分隔多个文件）
+  //       additionalData: `
+  //         @use "@/styles/variables.scss" as *;
+  //         @use "@/styles/mixin.scss" as *;
+  //       `,
+  //     },
+  //   },
+  // },
 })

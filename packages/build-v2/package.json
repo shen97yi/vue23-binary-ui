@@ -4,8 +4,8 @@
   "private": true,
   "devDependencies": {
     "@vitejs/plugin-vue2": "^2.3.4",
-    "vue": "^2.7.16",
-    "vue-template-compiler": "^2.7.16",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11",
     "@opentiny/vue": "^2.27.0"
   },
   "scripts": {

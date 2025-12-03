@@ -1,5 +1,11 @@
 packages:
   # - 'packages/build-v3*'
   # - 'examples/vue3-demo*'
+  # - '!examples/vue2-demo'
+  # - '!packages/build-v2'
   - 'examples/vue2-demo*'
   - 'packages/build-v2*'
+  - '!examples/vue3-demo'
+  - '!packages/build-v3'
+  # - 'packages*'
+  # - 'dev-temp*'
