@@ -21,7 +21,7 @@ export default defineConfig({
       external: [
         'vue',
         // '@opentiny/vue',
-        /^@opentiny\/vue/,   // 整个 @opentiny/vue 家族全部 external
+        // /^@opentiny\/vue/,   // 整个 @opentiny/vue 家族全部 external
         // /^@opentiny\/vue-icon/
       ],
       output: { 
