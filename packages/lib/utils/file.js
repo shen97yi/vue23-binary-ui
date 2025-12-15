@@ -1,6 +1,43 @@
 import { RESOURCE_SERVER_HOST, API_HOST, IS_SELF_UPLOAD,UPLOAD_SERVER_PROTOCOL } from '../config'
 import cookies from '@/utils/cookie.js'
 import { t } from '@/locale/index.js'
+import IconTxt from '@/assets/icon-fujianleixingtxt.svg'
+import IconPdf from '@/assets/icon-fujianleixingpdf.svg'
+import IconWord from '@/assets/icon-fujianleixingword.svg'
+import IconPpt from '@/assets/icon-fujianleixingppt.svg'
+import IconExcel from '@/assets/icon-fujianleixingexcel.svg'
+import IconImage from '@/assets/icon-fujianleixingtupian.svg'
+import IconVideo from '@/assets/icon-fujianleixingshipin.svg'
+import IconAudio from '@/assets/icon-fujianleixingyinpin.svg'
+import IconZip from '@/assets/icon-fujianleixingyasuobao.svg'
+import IconOther from '@/assets/icon-fujianleixingqita1.svg'
+// 根据文件路径返回对应的图标组件
+export function getFileSvg(path) {
+  if (!path) return IconOther
+  const ext = path.substring(path.lastIndexOf('.') + 1).toLowerCase()
+  const type = formatFileType(ext)
+
+  if (type === 'document') {
+    switch (ext) {
+      case 'txt':  return IconTxt
+      case 'pdf':  return IconPdf
+      case 'doc':
+      case 'docx': return IconWord
+      case 'ppt':
+      case 'pptx': return IconPpt
+      case 'xls':
+      case 'xlsx': return IconExcel
+      default:     return IconOther
+    }
+  }
+  if (type === 'image') return IconImage
+  if (type === 'video') return IconVideo
+  if (type === 'audio') return IconAudio
+  if (type === 'zip')   return IconZip
+  return IconOther
+}
+
+
 
 // RESOURCE_SERVER_HOST重新赋值
 const rescourceHost = () => {

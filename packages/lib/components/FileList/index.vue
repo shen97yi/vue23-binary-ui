@@ -5,7 +5,7 @@
       <li v-for="(item, index) in list" :key="index + item.fileUrl + item.fileKey">
         <template v-if="!isPreview || (item.status === 1 || item.status === 3)">
           <div class="icon-wrapper">
-            <i class="iconfont" :class="[fileIcon(item.fileUrl)]"></i>
+            <img class="svg-img" :src="getFileSvg(item.fileUrl)" alt="">
           </div>
           <div class="detail">
             <div class="name">{{ item.fileName }}</div>
@@ -67,7 +67,7 @@
     <div v-if="list && list.length > 0 && type === 'inline'">
       <ul class="file-list-inline">
         <li v-for="(item, index) in list" :key="index">
-          <i class="iconfont" :class="[fileIcon(item.fileUrl)]"></i>
+          <img class="svg-img" :src="getFileSvg(item.fileUrl)" alt="">
           <span class="name">{{ item.fileName }}</span>
           <span class="size">{{ formatSize(item.fileSize) }}</span>
           <!-- 上传进度条 -->
@@ -101,7 +101,7 @@ import { defineComponent, ref, reactive } from 'vue-demi'
 import Preview from "./Preview.vue";
 // import showPreview from "./PreviewMask.js";
 import { TinyBaseSelect, TinyOption, Modal  } from "@opentiny/vue";
-import { fileIcon, formatSize, formatFileType } from "@/utils/file.js";
+import { fileIcon, formatSize, formatFileType, getFileSvg } from "@/utils/file.js";
 import Obs from "@/plugins/ulearning-obs.js";
 import { useT } from "../../locale/index.js"
 // import uploadMixins from "@/mixins/upload.js"
@@ -236,6 +236,7 @@ export default defineComponent({
       ...state,
       t,
       fileIcon,
+      getFileSvg,
       formatSize,
       cancelUpload,
       deleteFile,
@@ -308,7 +309,6 @@ export default defineComponent({
   .icon-wrapper {
     float: left;
     padding: 2px 0;
-
     i {
       font-size: 36px;
       line-height: 1;
@@ -482,5 +482,8 @@ export default defineComponent({
 .upload-fail {
   margin-right: 10px;
   color: #F60000;
+}
+.svg-img {
+  width: 36px;
 }
 </style>

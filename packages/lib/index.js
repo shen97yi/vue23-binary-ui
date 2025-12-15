@@ -7,8 +7,6 @@ import Judge from './components/QuestionType/Judge'
 import "@/styles/index.scss"
 import "@/styles/variables.scss"
 import "@/styles/mixin.scss"
-import "@/assets/font/iconfont.css";
-import "@/assets/font/iconfont.js";
 export { 
   MyButton, 
   MyTinyButton,

@@ -25,12 +25,9 @@
     </div>
     <div class="player-content-circle" v-if="mode === 'circle'">
       <div class="icon-player" @click="togglePlayer">
-        <i
-          :class="[
-            paused ? 'icon-yinpin_zanting-01' : 'icon-yinpin_bofang-01',
-            'iconfont',
-          ]"
-        ></i>
+        <img
+          :src="paused ? require('@/assets/play.svg') : require('@/assets/pause.svg')"
+        ></img>
         <div class="txt">
           {{ paused ? t("play") : t("pause") }}
         </div>
@@ -41,7 +38,7 @@
         class="icon-player"
         @click="togglePlayer"
       >
-        <i :class="[ iconStatus, 'iconfont']"></i>
+        <img :src="paused ? require('@/assets/play.svg') : require('@/assets/pause.svg')" class="iconfont" alt="" />
       </div>
       <div
         class="status-bar"

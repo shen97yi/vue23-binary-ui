@@ -2,7 +2,7 @@
   <div class="audioplayerTimes">
     <div class="player-content stop-swiping" :class="{ disabled: currentTimes > 0 && times - currentTimes < 0 }">
       <div class="icon" @click="togglePlayer">
-        <i :class="[paused ? 'icon-bofang1' : 'icon-zanting1', 'iconfont']"></i>
+        <img :src="paused ? require('@/assets/play.svg') : require('@/assets/pause.svg')" class="iconfont" alt="" />
       </div>
       <div class="current-time">
         {{ currentTimeStr }}
