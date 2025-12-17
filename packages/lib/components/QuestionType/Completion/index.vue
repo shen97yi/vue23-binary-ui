@@ -417,6 +417,12 @@ $height: 44px;
     }
   }
   .preview-mode {
+    .correct-answer-preview {
+      margin-top: 12px;
+      >div {
+        font-weight: 600;
+      }
+    }
     .title {
       color: #17B26A;
     }

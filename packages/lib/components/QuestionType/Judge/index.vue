@@ -22,7 +22,7 @@
     <template v-else-if="mode === 2">
       <div class="preview-mode">
         <div class="correct-answer-preview">
-          <span>{{ t("correctAnswer") }}：</span>
+          <span>{{ t("answer") }}：</span>
           <TinyRadioGroup v-model="correctAnswer" disabled>
             <TinyRadio label="true">
               <img src="@/assets/correct.svg" alt="">
@@ -280,9 +280,10 @@ export default defineComponent({
 }
 
 .correct-answer-preview {
-  margin-top: 15px;
-  padding: 10px;
+  margin: 12px 0;
   border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .user-answer {

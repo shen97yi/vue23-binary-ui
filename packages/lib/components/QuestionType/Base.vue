@@ -289,6 +289,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.base-container {
+  font-size: 16px;
+}
 .insert-blank {
   margin-top: 12px;
 }
