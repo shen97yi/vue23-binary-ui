@@ -20,8 +20,8 @@ export default defineConfig({
     rollupOptions: {
       external: [
         'vue', 
-        '@vue/composition-api',
-        /^@opentiny\/vue/,   // 整个 @opentiny/vue 家族全部 external
+        // '@vue/composition-api',
+        // /^@opentiny\/vue/,   // 整个 @opentiny/vue 家族全部 external
         // /^@opentiny\/vue/,
         // /^@opentiny\/vue-icon/
       ],
