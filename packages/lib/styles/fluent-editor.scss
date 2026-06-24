@@ -479,6 +479,35 @@
 .ql-editor .ql-size-huge {
   font-size: 2.5em;
 }
+$rich-text-font-size-map: (
+  "12px": 12,
+  "13px": 13,
+  "14px": 14,
+  "15px": 15,
+  "16px": 16,
+  "17px": 17,
+  "18px": 18,
+  "19px": 19,
+  "20px": 20,
+  "22px": 22,
+  "24px": 24,
+  "26px": 26,
+  "29px": 29,
+  "32px": 32,
+  "36px": 36,
+  "40px": 40,
+  "48px": 48,
+  "72px": 72
+);
+@each $label, $px in $rich-text-font-size-map {
+  .ql-editor .ql-size-#{$label} {
+    font-size: calc(#{$px} * var(--question-font-size));
+  }
+  .ql-editor [style*="font-size:#{$label}"],
+  .ql-editor [style*="font-size: #{$label}"] {
+    font-size: calc(#{$px} * var(--question-font-size)) !important;
+  }
+}
 .ql-editor .ql-direction-rtl {
   direction: rtl;
   text-align: inherit;

@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, watch, onMounted, onUnmounted, computed, version, reactive  } from 'vue-demi'
+import { defineComponent, ref, watch, onMounted, onUnmounted, computed, version, reactive } from 'vue-demi'
 import { TinyFluentEditor, TinyDialogBox, TinyButton, TinyInput, TinyDrawer } from '@opentiny/vue'
 import FileList from "../FileList/index.vue";
 import { handlerErrCode, formatTypeLimit } from "../../utils/file.js";
@@ -110,7 +110,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const drawerVisible = ref(false)
     const isMobile = getPlatform().isMobile
-    
+
     const handleHtmlInput = (e) => {
       const selection = window.getSelection()
       const range = selection.getRangeAt(0)
@@ -233,6 +233,27 @@ export default defineComponent({
       if(isMobile) return 
       // 初始化编辑器内容
       const fluentEditor = fluentEditorRef.value?.state.quill
+      if (!fluentEditor) return
+      setTimeout(() => {
+        const toolbar = fluentEditor.getModule('toolbar')
+        const sizeSelect = toolbar?.container?.querySelector?.('select.ql-size')
+
+        if (sizeSelect && sizeSelect.value !== '16px') {
+          sizeSelect.value = '16px'
+          sizeSelect.dispatchEvent(new Event('change'))
+          fluentEditor.root?.blur?.()
+          return
+        }
+
+        const selection = fluentEditor.getSelection()
+        const index = selection?.index ?? 0
+        const format = fluentEditor.getFormat(index, 0)
+        if (!format?.size) {
+          fluentEditor.setSelection(index, 0, 'api')
+          fluentEditor.format('size', '16px', 'api')
+          fluentEditor.root?.blur?.()
+        }
+      }, 0)
       const toolbar = fluentEditor.getModule('toolbar')
       // 每次最多上传个文件检测
       // const checkAddFile = (file) => {
@@ -320,6 +341,26 @@ export default defineComponent({
     const fontList = ['zh', 'zh-cn', 'zh-tw'].includes(lang)
       ? allFonts
       : allFonts.filter((font) => !chineseFonts.includes(font))
+    const sizeList = [
+      "12px",
+      "13px",
+      "14px",
+      "15px",
+      "16px",
+      "17px",
+      "18px",
+      "19px",
+      "20px",
+      "22px",
+      "24px",
+      "26px",
+      "29px",
+      "32px",
+      "36px",
+      "40px",
+      "48px",
+      "72px"
+    ]
     const options = ref({
       placeholder: props.placeholderText,
       modules: {
@@ -330,26 +371,7 @@ export default defineComponent({
               "font": fontList
             },
             {
-              "size": [
-                "12px",
-                "13px",
-                "14px",
-                "15px",
-                "16px",
-                "17px",
-                "18px",
-                "19px",
-                "20px",
-                "22px",
-                "24px",
-                "26px",
-                "29px",
-                "32px",
-                "36px",
-                "40px",
-                "48px",
-                "72px"
-              ]
+              "size": sizeList
             },
             {
               "lineheight": [
@@ -445,9 +467,12 @@ export default defineComponent({
       const LineHeightStyle = new Parchment.StyleAttributor('lineheight', 'line-height', {
         scope: Parchment.Scope.BLOCK
       })
-      const FontFamilyStyle = new Parchment.StyleAttributor('font-family',    'font-family', {
+      const FontFamilyStyle = new Parchment.StyleAttributor('font-family', 'font-family', {
         scope: Parchment.Scope.INLINE
       })
+      const SizeStyle = FluentEditor.import('attributors/style/size')
+      SizeStyle.whitelist = sizeList
+      FluentEditor.register(SizeStyle, true)
       FluentEditor.register('formats/font-family', FontFamilyStyle)
       FluentEditor.register('formats/image1', ImageStyle)
       FluentEditor.register('formats/video1', VideoStyle)
