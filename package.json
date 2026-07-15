@@ -1,24 +1,24 @@
 {
-  "name": "ul-question-test-ui",
-  "version": "1.0.50",
+  "name": "ul-question-ui",
+  "version": "1.0.1",
   "private": false,
   "files": [
     "dist"
   ],
-  "main": "./dist/vue2/ul-question-test-ui.cjs.js",
-  "module": "./dist/vue2/ul-question-test-ui.es.js",
+  "main": "./dist/vue2/ul-question-ui.cjs.js",
+  "module": "./dist/vue2/ul-question-ui.es.js",
   "exports": {
     ".": {
-      "import": "./dist/vue2/ul-question-test-ui.es.js",
-      "require": "./dist/vue2/ul-question-test-ui.cjs.js"
+      "import": "./dist/vue2/ul-question-ui.es.js",
+      "require": "./dist/vue2/ul-question-ui.cjs.js"
     },
     "./vue2": {
-      "import": "./dist/vue2/ul-question-test-ui.es.js",
-      "require": "./dist/vue2/ul-question-test-ui.cjs.js"
+      "import": "./dist/vue2/ul-question-ui.es.js",
+      "require": "./dist/vue2/ul-question-ui.cjs.js"
     },
     "./vue3": {
-      "import": "./dist/vue3/ul-question-test-ui.es.js",
-      "require": "./dist/vue3/ul-question-test-ui.umd.js"
+      "import": "./dist/vue3/ul-question-ui.es.js",
+      "require": "./dist/vue3/ul-question-ui.umd.js"
     },
     "./vue2-style": "./dist/vue2/build-v2.css",
     "./vue3-style": "./dist/vue3/build-v3.css"

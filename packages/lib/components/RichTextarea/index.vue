@@ -17,8 +17,8 @@
     :append-to-body="true" destroy-on-close>
       <iframe :src="iframeUrl" frameborder="0"></iframe>
       <template #footer>
-        <TinyButton @click="boxVisibility = false">{{ t('confirm') }}</TinyButton>
-        <TinyButton type="primary" @click="mathConfirm">{{ t('cancel') }}</TinyButton>
+        <TinyButton @click="boxVisibility = false">{{ t('cancel') }}</TinyButton>
+        <TinyButton type="primary" @click="mathConfirm">{{ t('confirm') }}</TinyButton>
       </template>
     </TinyDialogBox>
     <TinyDrawer

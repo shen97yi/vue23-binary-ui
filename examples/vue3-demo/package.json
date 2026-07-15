@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@opentiny/vue": "^3.27.0",
-    "ul-question-test-ui": "workspace:*",
+    "ul-question-ui": "workspace:*",
     "vue": "^3.5.24"
   },
   "devDependencies": {

@@ -15,7 +15,7 @@ export default defineConfig({
       formats: ['es', 'cjs'],
       entry: resolve(__dirname, '../../packages/lib/index.js'),
       name: 'MyVueUi',
-      fileName: fmt => `ul-question-test-ui.${fmt}.js`
+      fileName: fmt => `ul-question-ui.${fmt}.js`
     },
     rollupOptions: {
       external: [

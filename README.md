@@ -1,4 +1,4 @@
-# ul-question-test-ui
+# ul-question-ui
 
 一个同时支持 Vue 2 和 Vue 3 的二元UI组件库，专注于提供高质量的问题测试相关组件。
 
@@ -16,14 +16,14 @@
 ### Vue 3 环境
 
 ```bash
-npm install ul-question-test-ui
+npm install ul-question-ui
 npm install @opentiny/vue@3
 ```
 
 ### Vue 2 环境
 
 ```bash
-npm install ul-question-test-ui
+npm install ul-question-ui
 npm install @opentiny/vue@2
 # Vue 2 版本低于 2.7 时，需要额外安装
 npm install @vue/composition-api
@@ -36,8 +36,8 @@ npm install @vue/composition-api
 ```javascript
 import { createApp } from 'vue'
 import App from './App.vue'
-import MyVueUi from 'ul-question-test-ui/vue3'
-import 'ul-question-test-ui/vue3-style'
+import MyVueUi from 'ul-question-ui/vue3'
+import 'ul-question-ui/vue3-style'
 
 const app = createApp(App)
 app.use(MyVueUi)
@@ -49,8 +49,8 @@ app.mount('#app')
 ```javascript
 import Vue from 'vue'
 import App from './App.vue'
-import MyVueUi from 'ul-question-test-ui/vue2' // 或 'ul-question-test-ui'
-import 'ul-question-test-ui/vue2-style'
+import MyVueUi from 'ul-question-ui/vue2' // 或 'ul-question-ui'
+import 'ul-question-ui/vue2-style'
 
 Vue.use(MyVueUi)
 
@@ -192,16 +192,16 @@ pnpm run build
 ```javascript
 {
   ".": {
-    "import": "./dist/vue2/ul-question-test-ui.es.js",
-    "require": "./dist/vue2/ul-question-test-ui.cjs.js"
+    "import": "./dist/vue2/ul-question-ui.es.js",
+    "require": "./dist/vue2/ul-question-ui.cjs.js"
   },
   "./vue2": {
-    "import": "./dist/vue2/ul-question-test-ui.es.js",
-    "require": "./dist/vue2/ul-question-test-ui.cjs.js"
+    "import": "./dist/vue2/ul-question-ui.es.js",
+    "require": "./dist/vue2/ul-question-ui.cjs.js"
   },
   "./vue3": {
-    "import": "./dist/vue3/ul-question-test-ui.es.js",
-    "require": "./dist/vue3/ul-question-test-ui.umd.js"
+    "import": "./dist/vue3/ul-question-ui.es.js",
+    "require": "./dist/vue3/ul-question-ui.umd.js"
   },
   "./vue2-style": "./dist/vue2/build-v2.css",
   "./vue3-style": "./dist/vue3/build-v3.css"
@@ -211,7 +211,7 @@ pnpm run build
 ### 使用组件库注意事项
 
 - 确保在 Vue 2 项目中安装了 `@vue/composition-api` 插件（Vue 2 版本低于 2.7 时）
-- 在 Vue 3 项目中直接使用 `import { Choice } from 'ul-question-test-ui/vue3'` 即可
+- 在 Vue 3 项目中直接使用 `import { Choice } from 'ul-question-ui/vue3'` 即可
 - 目前只试验了vue2版本作用于内部课堂项目（使用webpack4，需要在配置中添加
 - transpileDependencies: [
     'quill',

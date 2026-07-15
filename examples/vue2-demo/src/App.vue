@@ -26,8 +26,8 @@
 </template>
 
 <script>
-// import { Choice, Judge, Completion } from 'ul-question-test-ui';
-import { Choice, Judge, Completion } from "my-vue3-ui";
+import { Choice, Judge, Completion } from 'ul-question-ui';
+// import { Choice, Judge, Completion } from "my-vue3-ui";
 
 export default {
   name: "App",
