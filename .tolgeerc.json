@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.tolgee.io/cli-schema.json",
+  "apiUrl": "https://translation.ulearning.app",
+  "projectId": 149,
+  "format": "JSON_TOLGEE",
+  "parser": "vue",
+  "patterns": ["packages/lib/**/*.{vue,js,ts,jsx,tsx}"],
+  "push": {
+    "files": [
+      { "path": "packages/lib/locale/lang/zh.json", "language": "zh" },
+      { "path": "packages/lib/locale/lang/en.json", "language": "en" }
+    ],
+    "languages": ["zh", "en"],
+    "forceMode": "OVERRIDE"
+  },
+  "pull": {
+    "path": "packages/lib/locale/lang",
+    "languages": ["zh", "en", "tw", "th", "es", "ar", "id", "fr", "pt", "ru", "am", "it", "uz", "sw"],
+    "fileStructureTemplate": "{languageTag}.{extension}",
+    "emptyDir": false
+  }
+}
