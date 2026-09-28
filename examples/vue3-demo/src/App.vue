@@ -28,8 +28,8 @@
 </template>
 
 <script setup>
-// import { Choice, Judge, Completion } from 'ul-question-ui/vue3';
-import { Choice, Judge, Completion } from "my-vue3-ui";
+import { Choice, Judge, Completion } from 'ul-question-ui/vue3';
+// import { Choice, Judge, Completion } from "my-vue3-ui";
 import { ref, computed } from "vue";
 // 状态定义
 const question = ref({

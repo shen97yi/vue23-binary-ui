@@ -9,3 +9,13 @@ packages:
   # - '!packages/build-v3'
   # - 'packages*'
   # - 'dev-temp*'
+allowBuilds:
+  '@parcel/watcher': true
+  core-js: true
+  esbuild: true
+  vue-demi: true
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - 'core-js'
+  - 'esbuild'
+  - 'vue-demi'
