@@ -292,7 +292,7 @@ export function getPlatform () {
     wechatApplets:versions.wechatApplets,
     isWelink:versions.isWelink,
     isInApp:versions.isInApp,
-    isMobile: versions.mobile || versions.isInApp,
+    isMobile: (versions.mobile || versions.isInApp) && !versions.iPad,
     isH5: versions.mobile && !versions.isInApp,
     isIOS: versions.ios,
     isAndroid: versions.android,
